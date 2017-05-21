@@ -1,20 +1,14 @@
-package org.newtutorials.jackson.infinite.recursion.json_identity_info.model;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+package org.newtutorials.jackson.infinite.recursion.json_ignore_properties.model;
 
 import java.util.List;
 
 /**
  * Created by dani on 5/20/2017.
  */
-@JsonIdentityInfo( scope = Customer.class,
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id"
-)
 public class Customer {
     private Long id;
     private String name;
+
     private List<Order> orders;
     public Customer() {
     }

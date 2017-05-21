@@ -1,18 +1,15 @@
-package org.newtutorials.jackson.infinite.recursion.json_identity_info.model;
+package org.newtutorials.jackson.infinite.recursion.json_filter.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
 /**
  * Created by dani on 5/20/2017.
  */
-@JsonIdentityInfo(
-        scope = Order.class,
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id"
-)
+@JsonFilter("filterOrder")
 public class Order {
+
     private Long id;
+
     private Customer customer;
 
     public Order() {

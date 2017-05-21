@@ -1,18 +1,17 @@
-package org.newtutorials.jackson.infinite.recursion.json_identity_info.model;
+package org.newtutorials.jackson.infinite.recursion.json_ignore_properties.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Created by dani on 5/20/2017.
  */
-@JsonIdentityInfo(
-        scope = Order.class,
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id"
-)
+@JsonIgnoreProperties({"customer"})
+//@JsonIgnoreProperties(ignoreUnknown = true, value={"customer"})
 public class Order {
+
     private Long id;
+
     private Customer customer;
 
     public Order() {
